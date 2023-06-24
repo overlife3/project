@@ -1,9 +1,9 @@
-import Message from "./components/Message/Message";
 import style from "./App.module.scss";
+import Feed from "./components/Feed/Feed";
 function App() {
   return (
     <div className={style.app}>
-      <Message />
+      <Feed />
     </div>
   );
 }
