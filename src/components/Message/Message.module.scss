@@ -1,0 +1,9 @@
+.message {
+  width: 886px;
+  padding: 10px;
+
+  &_wrapper {
+    display: flex;
+    gap: 10px;
+  }
+}
