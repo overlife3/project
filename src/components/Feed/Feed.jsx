@@ -14,7 +14,7 @@ const Feed = () => {
   return (
     <div>
       {messages?.map((message) => (
-        <Message />
+        <Message message={message} />
       ))}
     </div>
   );
