@@ -1,0 +1,12 @@
+@import "../../../styles/mixins.scss";
+
+.direction {
+  button {
+    font-size: 11px;
+    @include button(64px, 28px);
+  }
+
+  button + button {
+    margin-left: 10px;
+  }
+}

@@ -1,0 +1,28 @@
+.content {
+  .outgoing_text {
+    line-height: 21.6px;
+    letter-spacing: -0.56px;
+    color: var(--black-1-color);
+    font-size: 16px;
+    margin-bottom: 6px;
+    transition: height 0.35s ease-out;
+    overflow: hidden;
+    span {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--blue-1-color);
+      letter-spacing: 1px;
+      cursor: default;
+    }
+  }
+
+  span {
+    display: inline-block;
+    color: var(--grey-2-color);
+    font-size: 12px;
+    cursor: pointer;
+    &:hover {
+      color: var(--blue-1-color);
+    }
+  }
+}

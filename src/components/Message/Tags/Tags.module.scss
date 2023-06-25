@@ -1,0 +1,10 @@
+.tags {
+  span {
+    font-size: 12px;
+    color: var(--blue-1-color);
+    cursor: pointer;
+  }
+  span + span {
+    margin-left: 6px;
+  }
+}

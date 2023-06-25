@@ -1,0 +1,14 @@
+@mixin button($width: auto, $height: auto) {
+  background-color: transparent;
+  border: var(--blue-1-color) 1px solid;
+  border-radius: 1px;
+  color: var(--blue-1-color);
+  font-family: var(--font-2);
+  width: $width;
+  height: $height;
+
+  &:hover {
+    background-color: var(--blue-1-color);
+    color: white;
+  }
+}

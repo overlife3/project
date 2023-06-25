@@ -3,12 +3,14 @@ import {
   FEED_LOADING,
   GET_ALL_MESSAGES,
   UPDATE_MESSAGES,
+  TOGGLE_FAVORITE_MESSAGE,
 } from "../actions/actions";
 
 const initialState = {
   messages: [],
   likeImages: [],
   dislikeImages: [],
+  favoriteMessages: [],
   loading: false,
   error: null,
 };
@@ -40,6 +42,17 @@ export const feedReducer = (state = initialState, { type, payload }) => {
       return { ...state, loading: true };
     case FEED_ERROR:
       return { ...state, loading: false, error: payload };
+    case TOGGLE_FAVORITE_MESSAGE:
+      let newFavoriteMessages = state.favoriteMessages;
+      if (newFavoriteMessages.includes(payload)) {
+        newFavoriteMessages = newFavoriteMessages.filter(
+          (item) => item !== payload
+        );
+      } else {
+        newFavoriteMessages.push(payload);
+      }
+      state.favoriteMessages = newFavoriteMessages;
+      return { ...state };
     default:
       return state;
   }

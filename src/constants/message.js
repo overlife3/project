@@ -1,0 +1,3 @@
+export const NUMBER__CHARACTERS_IN_CONTENT = 238;
+export const ATTACHMENT_WIDTH = 259;
+export const ATTACHMENT_HEIGHT = 146;

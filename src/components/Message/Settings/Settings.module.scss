@@ -1,0 +1,52 @@
+.settings {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  svg {
+    cursor: pointer;
+  }
+
+  .send {
+    svg {
+      width: 18px;
+      fill: var(--grey-1-color);
+      &:hover {
+        fill: var(--blue-1-color);
+      }
+    }
+  }
+  .hide {
+    svg {
+      width: 18px;
+      fill: none;
+      stroke: var(--grey-1-color);
+      &:hover {
+        stroke: var(--blue-1-color);
+      }
+    }
+  }
+  .setting {
+    svg {
+      width: 20px;
+      fill: rgba(128, 128, 128, 0.4);
+      &:hover {
+        fill: var(--blue-1-color);
+      }
+    }
+  }
+  .star {
+    svg {
+      width: 23px;
+      fill: var(--grey-1-color);
+      &:hover {
+        fill: var(--blue-1-color);
+      }
+    }
+    &.active {
+      svg {
+        fill: var(--blue-1-color);
+      }
+    }
+  }
+}

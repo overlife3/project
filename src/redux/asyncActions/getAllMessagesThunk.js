@@ -3,6 +3,8 @@ import { feedError, feedLoading, getAllMessages } from "../actions/actions";
 export const getAllMessagesThunk = () => {
   const formData = new FormData();
   formData.append("actionName", "MessagesLoad");
+  formData.append("messageId", 0);
+
   return (dispatch) => {
     dispatch(feedLoading());
     fetch("http://a0830433.xsph.ru/", {

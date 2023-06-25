@@ -1,0 +1,27 @@
+.body {
+  flex-basis: 100%;
+  margin-bottom: 6px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-size: 16px;
+  color: var(--grey-2-color);
+}
+
+.channel {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--grey-2-color);
+}
+
+.office {
+  display: flex;
+  gap: 45px;
+}

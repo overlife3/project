@@ -1,2 +1,6 @@
-@import "./styles/fonts.scss";
-@import "./styles/variables.scss";
+@import "./styles/index.scss";
+
+body {
+  font-family: var(--font-1);
+  font-size: 14px;
+}

@@ -8,7 +8,7 @@ const Avatar = ({ date }) => {
   return (
     <div className={style.avatar}>
       <img src={img} />
-      {time}
+      <p>{time}</p>
     </div>
   );
 };

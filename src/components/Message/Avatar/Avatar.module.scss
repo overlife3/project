@@ -1,4 +1,13 @@
 .avatar {
   display: flex;
   flex-direction: column;
+  img {
+    width: 36px;
+  }
+  p {
+    text-align: center;
+    margin: 0;
+    margin-top: 8px;
+    color: var(--grey-2-color);
+  }
 }
