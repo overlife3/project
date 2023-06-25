@@ -1,10 +1,10 @@
 .content {
+  margin-bottom: 6px;
   .outgoing_text {
     line-height: 21.6px;
     letter-spacing: -0.56px;
     color: var(--black-1-color);
     font-size: 16px;
-    margin-bottom: 6px;
     transition: height 0.35s ease-out;
     overflow: hidden;
     span {

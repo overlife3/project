@@ -1,0 +1,35 @@
+.menu {
+  background-color: var(--white-1-color);
+  width: 35px;
+  height: 35px;
+  box-shadow: var(--box-shadow-1);
+  transition: box-shadow var(--transition-duration-1);
+  &:hover {
+    box-shadow: var(--box-shadow-2);
+  }
+}
+
+.arrow {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  svg {
+    transition: fill var(--transition-duration-1);
+    transform: rotate(-90deg);
+    fill: var(--grey-2-color);
+    height: 14px;
+  }
+  &:hover {
+    svg {
+      fill: var(--blue-1-color);
+    }
+  }
+  &.reverse {
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+}

@@ -6,8 +6,11 @@
   font-family: var(--font-2);
   width: $width;
   height: $height;
-
+  transition: all var(--transition-duration-1);
+  box-shadow: none;
   &:hover {
+    transform: scale(1.06);
+    box-shadow: var(--box-shadow-2);
     background-color: var(--blue-1-color);
     color: white;
   }

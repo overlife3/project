@@ -1,0 +1,11 @@
+.feed {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

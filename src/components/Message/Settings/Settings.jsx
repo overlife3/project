@@ -13,7 +13,6 @@ const Settings = () => {
   const toggleFavorite = () => {
     dispatch(toggleFavoriteMessage(message.id));
   };
-  console.log(message.id);
 
   const cnStar = classnames(style.star, {
     [style.active]: favoriteMessages.includes(message.id),

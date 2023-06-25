@@ -1,7 +1,8 @@
 .message {
   width: 886px;
   padding: 10px;
-  border: 1px solid black;
+  background-color: var(--white-1-color);
+  box-shadow: var(--box-shadow-2);
   &_wrapper {
     display: flex;
     gap: 10px;

@@ -4,6 +4,7 @@ import {
   GET_ALL_MESSAGES,
   UPDATE_MESSAGES,
   TOGGLE_FAVORITE_MESSAGE,
+  TOGGLE_DIRECTION,
 } from "../actions/actions";
 
 const initialState = {
@@ -11,6 +12,7 @@ const initialState = {
   likeImages: [],
   dislikeImages: [],
   favoriteMessages: [],
+  direction: "ascending", // "descending" | "ascending"
   loading: false,
   error: null,
 };
@@ -52,6 +54,13 @@ export const feedReducer = (state = initialState, { type, payload }) => {
         newFavoriteMessages.push(payload);
       }
       state.favoriteMessages = newFavoriteMessages;
+      return { ...state };
+    case TOGGLE_DIRECTION:
+      if (state.direction === "ascending") {
+        state.direction = "descending";
+      } else {
+        state.direction = "ascending";
+      }
       return { ...state };
     default:
       return state;

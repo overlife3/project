@@ -3,6 +3,7 @@ export const FEED_ERROR = "FEED_ERROR";
 export const FEED_LOADING = "FEED_LOADING";
 export const UPDATE_MESSAGES = "UPDATE_MESSAGES";
 export const TOGGLE_FAVORITE_MESSAGE = "TOGGLE_FAVORITE_MESSAGE";
+export const TOGGLE_DIRECTION = "TOGGLE_DIRECTION";
 
 export const getAllMessages = (messages) => {
   return {
@@ -35,5 +36,11 @@ export const toggleFavoriteMessage = (id) => {
   return {
     type: TOGGLE_FAVORITE_MESSAGE,
     payload: id,
+  };
+};
+
+export const toggleDirection = () => {
+  return {
+    type: TOGGLE_DIRECTION,
   };
 };
