@@ -1,9 +1,11 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useState } from "react";
 import { NUMBER__CHARACTERS_IN_CONTENT } from "../../../constants/message";
 import { cropText } from "../../../util/cropText";
 import { OutgoingText } from "../../share/OutgoingContent/OutgoingText";
+import PropTypes from "prop-types";
 import style from "./Content.module.scss";
+
 const Content = ({ text }) => {
   const [visibleBigText, setVisibleBigText] = useState(false);
   const isBigText = text.length > NUMBER__CHARACTERS_IN_CONTENT;
@@ -33,6 +35,10 @@ const Content = ({ text }) => {
       </span>
     </div>
   );
+};
+
+Content.propTypes = {
+  text: PropTypes.string,
 };
 
 export default Content;

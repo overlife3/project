@@ -1,0 +1,9 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 700px;
+  overflow-y: auto;
+  background-color: var(--white-1-color);
+  padding: 10px;
+}

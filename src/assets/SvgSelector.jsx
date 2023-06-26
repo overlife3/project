@@ -27,9 +27,9 @@ const Svg = ({ name }) => {
             y="0.625"
             width="16.75"
             height="16.75"
-            stroke-width="1.25"
+            strokeWidth="1.25"
           />
-          <line y1="5.375" x2="18" y2="5.375" stroke-width="1.25" />
+          <line y1="5.375" x2="18" y2="5.375" strokeWidth="1.25" />
         </svg>
       );
     case "setting":

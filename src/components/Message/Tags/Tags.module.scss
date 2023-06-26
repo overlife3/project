@@ -1,8 +1,12 @@
 .tags {
   span {
     font-size: 12px;
-    color: var(--blue-1-color);
+    color: var(--grey-2-color);
     cursor: pointer;
+    transition: color var(--transition-duration-1);
+    &:hover {
+      color: var(--blue-1-color);
+    }
   }
   span + span {
     margin-left: 6px;

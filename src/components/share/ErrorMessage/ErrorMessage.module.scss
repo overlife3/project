@@ -1,0 +1,15 @@
+@import "../../../styles/mixins.scss";
+.error_message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 200px;
+  width: 200px;
+  background-color: var(--white-1-color);
+  gap: 20px;
+  color: var(--red-1-color);
+  button {
+    @include errorButton;
+  }
+}

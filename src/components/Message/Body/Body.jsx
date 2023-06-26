@@ -3,7 +3,10 @@ import Attachments from "../Attachments/Attachments";
 import Content from "../Content/Content";
 import Direction from "../Direction/Direction";
 import Settings from "../Settings/Settings";
+import PropTypes from "prop-types";
+import { attachmentPropTypes } from "../../../proptypes/proptypes";
 import style from "./Body.module.scss";
+
 const Body = (props) => {
   const { author, text, channel, attachments } = props;
   return (
@@ -22,6 +25,13 @@ const Body = (props) => {
       <Attachments attachments={attachments} />
     </div>
   );
+};
+
+Body.propTypes = {
+  author: PropTypes.string,
+  text: PropTypes.string,
+  channel: PropTypes.string,
+  attachments: PropTypes.arrayOf(attachmentPropTypes),
 };
 
 export default Body;

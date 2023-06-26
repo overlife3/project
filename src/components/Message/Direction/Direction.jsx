@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./Direction.module.scss";
+
 const Direction = () => {
   return (
     <div className={style.direction}>

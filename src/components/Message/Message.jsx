@@ -1,9 +1,9 @@
 import React from "react";
-import Avatar from "./Avatar/Avatar";
+import Avatar from "../share/Avatar/Avatar";
 import Body from "./Body/Body";
 import Tags from "./Tags/Tags";
 import { MessageContext } from "../../context/messageContext";
-
+import { messagePropTypes } from "../../proptypes/proptypes";
 import style from "./Message.module.scss";
 
 const Message = ({ message }) => {
@@ -24,6 +24,10 @@ const Message = ({ message }) => {
       </div>
     </MessageContext.Provider>
   );
+};
+
+Message.propTypes = {
+  message: messagePropTypes,
 };
 
 export default Message;

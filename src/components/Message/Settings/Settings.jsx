@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import SvgSelector from "../../../assets/SvgSelector";
 import { MessageContext } from "../../../context/messageContext";
 import classnames from "classnames";
-import { toggleFavoriteMessage } from "../../../redux/actions/actions";
+import { toggleFavoriteMessage } from "../../../redux/actions/server";
 import style from "./Settings.module.scss";
 const Settings = () => {
-  const dispatch = useDispatch();
-  const favoriteMessages = useSelector((store) => store.feed.favoriteMessages);
   const { message } = useContext(MessageContext);
+  const dispatch = useDispatch();
+  const { favoriteMessages } = useSelector((store) => store.server);
 
   const toggleFavorite = () => {
     dispatch(toggleFavoriteMessage(message.id));

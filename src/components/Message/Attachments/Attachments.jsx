@@ -1,27 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import {
   ATTACHMENT_HEIGHT,
   ATTACHMENT_WIDTH,
 } from "../../../constants/message";
+import Video from "../../share/Video/Video";
+import Image from "../../share/Image/Image";
+import PropTypes from "prop-types";
+import { attachmentPropTypes } from "../../../proptypes/proptypes";
 import style from "./Attachments.module.scss";
-
-const Video = ({ url }) => {
-  return (
-    <video controls className={style.video}>
-      <source src={url} type="video/mp4" />
-      Извините, но ваш браузер не поддерживает видео
-    </video>
-  );
-};
-
-const Image = ({ url }) => {
-  return <img src={url} alt="Картинка" className={style.image} />;
-};
-
-const initialState = {
-  countAttachment: 0,
-  isAccommodates: false,
-};
 
 const Attachments = ({ attachments }) => {
   const sizeAttachmentStyle = {
@@ -31,14 +17,15 @@ const Attachments = ({ attachments }) => {
 
   return (
     <div className={style.attachments}>
-      {attachments.map((item) => {
+      {attachments.map((item, index) => {
         if (item.type === "video")
           return (
             <div
               className={style.attachment_wrapper}
               style={sizeAttachmentStyle}
+              key={index}
             >
-              <Video url={item.url} />
+              <Video url={item.url} cn={style.video} />
             </div>
           );
         if (item.type === "image")
@@ -46,13 +33,18 @@ const Attachments = ({ attachments }) => {
             <div
               className={style.attachment_wrapper}
               style={sizeAttachmentStyle}
+              key={index}
             >
-              <Image url={item.url} />;
+              <Image url={item.url} cn={style.image} />;
             </div>
           );
       })}
     </div>
   );
+};
+
+Attachments.propTypes = {
+  attachments: PropTypes.arrayOf(attachmentPropTypes),
 };
 
 export default Attachments;

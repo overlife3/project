@@ -1,14 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { getTextOffsetHeight } from "../../../util/getTextOffsetHeight";
+import PropTypes from "prop-types";
 
 const initialState = {
   style: { position: "relative" },
 };
+
 export const OutgoingText = (props) => {
   const divRef = useRef();
   const { smallText, bigText, className = "", size } = props;
   const [state, setState] = useState(initialState);
   const isBig = size === "big";
+
   useEffect(() => {
     setState((prevState) => {
       const style = { ...prevState.style };
@@ -27,4 +30,11 @@ export const OutgoingText = (props) => {
       {!isBig && <span>...</span>}
     </div>
   );
+};
+
+OutgoingText.propTypes = {
+  smallText: PropTypes.string,
+  bigText: PropTypes.string,
+  className: PropTypes.string,
+  size: PropTypes.string,
 };

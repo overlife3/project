@@ -3,13 +3,18 @@ import thunk from "redux-thunk";
 import { feedReducer } from "./reducer/feed";
 import storage from "redux-persist/lib/storage";
 import { persistStore, persistReducer } from "redux-persist";
-
-const rootReducer = combineReducers({ feed: feedReducer });
+import { informantReducer } from "./reducer/informant";
+import { serverReducer } from "./reducer/server";
+const rootReducer = combineReducers({
+  server: serverReducer,
+  feed: feedReducer,
+  informant: informantReducer,
+});
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["feed"],
+  whitelist: ["feed", "server"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

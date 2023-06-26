@@ -1,15 +1,13 @@
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
-const fetchData = () => {
-  dispatch(loading);
-  fetch("url")
-    .then((json) => dispatch(json))
-    .catch((err) => dispatch(err));
-};
+export const usePolling = (thunk, duration) => {
+  const dispatch = useDispatch();
 
-export const usePolling = (fetchData, duration) => {
   useEffect(() => {
-    const timer = setInterval(fetchData, duration);
+    const timer = setInterval(() => {
+      dispatch(thunk());
+    }, duration * 1000);
     return () => clearInterval(timer);
   }, []);
 };

@@ -2,7 +2,7 @@ import classNames from "classnames";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SvgSelector from "../../../assets/SvgSelector";
-import { toggleDirection } from "../../../redux/actions/actions";
+import { toggleDirection } from "../../../redux/actions/feed";
 import style from "./Menu.module.scss";
 
 const Menu = () => {
