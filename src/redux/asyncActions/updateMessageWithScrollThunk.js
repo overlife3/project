@@ -13,7 +13,7 @@ export const updateMessagesWithScrollThunk = () => {
     formData.append("actionName", "MessagesLoad");
     formData.append("messageId", lastId);
     setTimeout(() => {
-      fetch("http://a0830433.xsph.ru/", {
+      fetch("https://a0830433.xsph.ru/", {
         method: "POST",
         body: formData,
       })
