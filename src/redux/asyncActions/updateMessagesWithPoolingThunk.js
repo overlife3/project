@@ -10,7 +10,7 @@ export const updateMessagesWithPoolingThunk = () => {
     const formData = new FormData();
     formData.append("actionName", "MessagesLoad");
     formData.append("messageId", lastId);
-    fetch("https://a0830433.xsph.ru/", {
+    fetch("http://a0830433.xsph.ru/", {
       method: "POST",
       body: formData,
     })

@@ -9,7 +9,7 @@ export const getAllMessagesThunk = () => {
     formData.append("messageId", 0);
     dispatch(setLoadingFeed(true));
     setTimeout(() => {
-      fetch("https://a0830433.xsph.ru/", {
+      fetch("http://a0830433.xsph.ru/", {
         method: "POST",
         body: formData,
       })
