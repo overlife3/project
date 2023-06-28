@@ -1,13 +1,13 @@
 import { ARTIFICIAL_DELAY } from "../../constants/request";
-import { setErrorFeed, setLoadingFeed } from "../actions/feed";
-import { getAllMessages, updateFavoriteMessages } from "../actions/server";
+import { setErrorInformant, setLoadingInformant } from "../actions/informant";
+import { getOldMessages } from "../actions/server";
 
-export const getAllMessagesThunk = () => {
+export const getOldMessagesThunk = () => {
   return (dispatch) => {
     const formData = new FormData();
     formData.append("actionName", "MessagesLoad");
-    formData.append("messageId", 0);
-    dispatch(setLoadingFeed(true));
+    formData.append("oldMessages", true);
+    dispatch(setLoadingInformant(true));
     setTimeout(() => {
       fetch("http://a0830433.xsph.ru/", {
         method: "POST",
@@ -16,13 +16,12 @@ export const getAllMessagesThunk = () => {
         .then((res) => res.json())
         .then((res) => {
           if (typeof res === "object") {
-            dispatch(getAllMessages(res));
-            dispatch(updateFavoriteMessages(res.Messages));
+            dispatch(getOldMessages(res));
           }
-          dispatch(setLoadingFeed(false));
+          dispatch(setLoadingInformant(false));
         })
         .catch((err) => {
-          dispatch(setErrorFeed(err));
+          dispatch(setErrorInformant(err));
         });
     }, ARTIFICIAL_DELAY * 1000);
   };

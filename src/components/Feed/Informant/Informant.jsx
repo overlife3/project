@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { useDispatch, useSelector } from "react-redux";
-import { updateMessagesWithScrollThunk } from "../../../redux/asyncActions/updateMessageWithScrollThunk";
+import { getOldMessagesThunk } from "../../../redux/asyncActions/getOldMessagesThunk";
 import Loader from "../../share/Loader/Loader";
 import style from "./Informant.module.scss";
 
@@ -14,12 +14,12 @@ const Informant = () => {
 
   useEffect(() => {
     if (inView) {
-      dispatch(updateMessagesWithScrollThunk());
+      dispatch(getOldMessagesThunk());
     }
   }, [inView]);
 
   const handleClick = () => {
-    dispatch(updateMessagesWithScrollThunk());
+    dispatch(getOldMessagesThunk());
   };
 
   return (
@@ -31,7 +31,7 @@ const Informant = () => {
             Произошла ошибка. <button onClick={handleClick}>Повторить</button>
           </p>
         )}
-        {!loading && !error && <p>Новых сообщений пока нет</p>}
+        {!loading && !error && <div>Более старых сообщений нет</div>}
       </div>
     </>
   );

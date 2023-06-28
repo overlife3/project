@@ -3,6 +3,8 @@ import {
   GET_ALL_MESSAGES,
   UPDATE_MESSAGES,
   TOGGLE_FAVORITE_MESSAGE,
+  GET_OLD_MESSAGES,
+  UPDATE_FAVORITE_MESSAGES,
 } from "../actions/server";
 
 const initialState = {
@@ -30,6 +32,11 @@ export const serverReducer = (state = initialState, { type, payload }) => {
         likeImages: payload.likeImages,
         dislikeImages: payload.dislikeImages,
       };
+    case GET_OLD_MESSAGES:
+      // добавление старых сообщений в массив всех сообщений
+      return {
+        ...state,
+      };
     case TOGGLE_FAVORITE_MESSAGE:
       let newFavoriteMessages = state.favoriteMessages;
       if (newFavoriteMessages.includes(payload)) {
@@ -41,6 +48,13 @@ export const serverReducer = (state = initialState, { type, payload }) => {
       }
       state.favoriteMessages = newFavoriteMessages;
       return { ...state };
+    case UPDATE_FAVORITE_MESSAGES:
+      const updatedFavoriteMessages = state.favoriteMessages.filter(
+        (favoriteMessageId) => {
+          return !!payload.find((message) => message.id === favoriteMessageId);
+        }
+      );
+      return { ...state, favoriteMessages: updatedFavoriteMessages };
     default:
       return state;
   }

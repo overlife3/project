@@ -11,10 +11,10 @@ const List = ({ messages, direction }) => {
   const isDescending = direction === "descending";
 
   useEffect(() => {
-    if (isAscending) {
+    if (isDescending) {
       listRef.current.scrollTop = 0;
     }
-    if (isDescending) {
+    if (isAscending) {
       const scrollHeight = listRef.current.scrollHeight;
       listRef.current.scrollTop = scrollHeight;
     }
@@ -22,11 +22,11 @@ const List = ({ messages, direction }) => {
 
   return (
     <div className={style.list} ref={listRef}>
-      {isDescending && <Informant />}
+      {isAscending && <Informant />}
       {messages?.map((message) => (
         <Message message={message} key={message.id} />
       ))}
-      {isAscending && <Informant />}
+      {isDescending && <Informant />}
     </div>
   );
 };
